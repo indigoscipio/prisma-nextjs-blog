@@ -11,7 +11,7 @@ type Props = {};
 const DashboardPage = async (props: Props) => {
   const session = await getServerSession(authOptions);
 
-  if (!session) {
+  if (!session || !session.user) {
     redirect("/");
   }
 
